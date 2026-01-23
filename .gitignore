@@ -1,0 +1,8 @@
+.cache
+/build
+/lib
+sdkconfig.old
+/managed_components/espressif__arduino-foc
+/managed_components/espressif__cmake_utilities
+/managed_components/espressif__i2c_bus
+/managed_components/espressif__iqmath
