@@ -18,6 +18,12 @@ BLDCMotor motor = BLDCMotor(22/2);
 BLDCDriver6PWM driver6 = BLDCDriver6PWM(12,7, 11,6, 9,8);
 AS5600 as5600 = AS5600(I2C_NUM_0, GPIO_NUM_2, GPIO_NUM_10);
 
+// 电流检测引脚 (确保这些引脚在 ADC1 上，例如 GPIO 32-39)
+#define PIN_CS_A  36 
+#define PIN_CS_B  39
+
+InlineCurrentSenseESP32 current_sense = InlineCurrentSenseESP32(0.01f, 50.0f, PIN_CS_A, PIN_CS_B);
+
 float target_value = 0.0f;
 Commander command = Commander(Serial);
 void doTarget(char *cmd)
